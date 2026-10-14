@@ -1,0 +1,26 @@
+{
+  "schema": "v11-mobile-snapshot-v1",
+  "generated_at": "2026-10-14T10:00:00Z",
+  "source": "TEMPLATE ONLY - NOT LIVE MT5 DATA",
+  "connected": false,
+  "account": {
+    "currency": "USD",
+    "equity": 0,
+    "open_v11_positions": 0
+  },
+  "symbols": [
+    {
+      "symbol": "EURUSD",
+      "timeframe": "H1 / H4",
+      "side": "FLAT",
+      "confidence": 0.0,
+      "sniper_score": 0,
+      "status": "TEMPLATE ONLY",
+      "price": 0,
+      "spread_points": 0,
+      "reason": "Replace with actual exported V11 values.",
+      "updated_at": "2026-10-14T10:00:00Z"
+    }
+  ],
+  "events": []
+}

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="Android-friendly companion dashboard for V11 MT5 swing signals and alerts.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>V11 Mobile Companion</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#121c2d;--panel2:#172338;--line:#26364e;--text:#edf3fb;--muted:#a4b3c8;--green:#5ee0a0;--red:#ff7d88;--amber:#ffd27a;--blue:#8bb8ff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#101827 0,#0b1220 360px);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:940px;margin:0 auto;padding:16px 14px 36px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:8px 0 18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:42px;height:42px;border-radius:13px;background:#20395c;display:grid;place-items:center;font-weight:900;color:#b9d5ff;border:1px solid #36547b}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}h1{font-size:21px;margin:2px 0 0}.status{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:7px 10px;color:var(--amber);background:#241f16}.status.live{color:var(--green);background:#10271f}.notice{padding:12px 14px;border:1px solid #6e5526;background:#251f14;border-radius:14px;color:#ffe5b0;font-size:13px;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}.metric,.panel{background:rgba(18,28,45,.95);border:1px solid var(--line);border-radius:16px}.metric{padding:13px}.metric .label{font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:25px;letter-spacing:-.03em;margin-top:5px}.metric small{font-size:11px;color:var(--muted)}.layout{display:grid;grid-template-columns:1.25fr .75fr;gap:12px}.panel{padding:14px;margin-bottom:12px;min-width:0}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.panel h2{font-size:16px;margin:0}.muted{color:var(--muted);font-size:12px}.controls{display:flex;gap:8px;flex-wrap:wrap}.btn,button,.filelabel{min-height:42px;border-radius:11px;border:1px solid #344965;background:#1a2a42;color:var(--text);font:inherit;font-size:13px;padding:9px 12px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn.primary{background:#c6dcff;color:#10203a;border-color:#c6dcff;font-weight:700}.btn:focus-visible,button:focus-visible,.filelabel:focus-within{outline:3px solid var(--blue);outline-offset:2px}.filelabel input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.symbols{display:grid;gap:8px}.symbol{border:1px solid var(--line);background:#101a2a;border-radius:13px;padding:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}.symname{font-weight:750}.subline{font-size:12px;color:var(--muted);margin-top:2px}.side{font-size:11px;border-radius:99px;padding:4px 8px;border:1px solid var(--line);font-weight:800;display:inline-block}.buy{color:var(--green);background:#10271f;border-color:#235c43}.sell{color:var(--red);background:#30171f;border-color:#71323d}.flat{color:var(--muted);background:#1a2535}.score{text-align:right;font-size:20px;font-weight:800}.score small{display:block;font-size:10px;color:var(--muted);font-weight:500}.bar{height:5px;background:#243249;border-radius:99px;overflow:hidden;margin-top:8px}.bar span{display:block;height:100%;background:#8bb8ff;border-radius:99px}.eventlist{display:grid;gap:9px}.event{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.event:last-child{border:0}.dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex:none;background:var(--amber)}.dot.green{background:var(--green)}.dot.red{background:var(--red)}.event strong{display:block;font-size:13px}.event p{margin:2px 0 0;color:var(--muted);font-size:12px}.empty{border:1px dashed #3a4b64;border-radius:12px;padding:18px;text-align:center;color:var(--muted);font-size:13px}.footer{font-size:11px;color:var(--muted);text-align:center;padding:12px}.hidden{display:none!important}.tag{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 6px}.fineprint{font-size:12px;color:var(--muted);line-height:1.5}.error{color:var(--red);font-size:12px;margin-top:8px}
+@media(max-width:700px){main{padding:12px 11px 28px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.metric{padding:12px}.metric strong{font-size:23px}.layout{grid-template-columns:1fr}.panel{padding:12px}.top{align-items:flex-start}.symbol{padding:11px}.controls .btn,.controls .filelabel{flex:1}}
+</style>
+</head>
+<body>
+<main id="app">
+  <header class="top">
+    <div class="brand"><div class="logo">V11</div><div><div class="eyebrow">MT5 swing edition</div><h1>Mobile Companion</h1></div></div>
+    <div id="connection" class="status">DEMO DATA · NOT CONNECTED</div>
+  </header>
+  <div class="notice"><strong>Important:</strong> This dashboard is a companion UI, not a trading terminal. The sample rows are illustrative demo data. Nothing here confirms live MT5 signals or places orders. Import an actual V11 JSON export when the EA bridge is configured.</div>
+  <section class="grid" aria-label="Account summary">
+    <div class="metric"><div class="label">Watchlist symbols</div><strong id="watchCount">—</strong><small>from imported snapshot</small></div>
+    <div class="metric"><div class="label">Qualified signals</div><strong id="signalCount">—</strong><small>BUY or SELL only</small></div>
+    <div class="metric"><div class="label">Open V11 positions</div><strong id="positionCount">—</strong><small>snapshot value</small></div>
+    <div class="metric"><div class="label">Last scan</div><strong id="lastScan" style="font-size:16px">—</strong><small id="ageLabel">No live connection</small></div>
+  </section>
+  <div class="controls" style="margin-bottom:12px">
+    <label class="filelabel">⬆ Import V11 JSON <input id="fileInput" type="file" accept=".json,application/json"></label>
+    <button class="btn" id="demoBtn" type="button">Load demo preview</button>
+    <button class="btn" id="exportBtn" type="button">Export current view</button>
+  </div>
+  <div id="importError" class="error" role="status" aria-live="polite"></div>
+  <div class="layout">
+    <section class="panel">
+      <div class="panelhead"><div><h2>Watchlist & signals</h2><div class="muted">Tap a row to inspect its rationale</div></div><span id="dataTag" class="tag">DEMO</span></div>
+      <div id="symbols" class="symbols"></div>
+    </section>
+    <div>
+      <section class="panel">
+        <div class="panelhead"><h2>Recent events</h2><span class="tag">LOCAL VIEW</span></div>
+        <div id="events" class="eventlist"></div>
+      </section>
+      <section class="panel">
+        <div class="panelhead"><h2>Selected symbol</h2><span id="selectedSide" class="side flat">FLAT</span></div>
+        <div id="detail"><div class="empty">Select a symbol to see details.</div></div>
+      </section>
+      <section class="panel">
+        <h2 style="margin-bottom:8px">Connection status</h2>
+        <p class="fineprint" id="connectionInfo">No MT5 connection configured. This version reads a JSON snapshot chosen by you. It does not fetch data from your PC or broker automatically.</p>
+        <p class="fineprint">Never upload account passwords, investor passwords, API keys, seed phrases or private keys. This dashboard should receive only market/signal summary data.</p>
+      </section>
+    </div>
+  </div>
+  <div class="footer">V11 Mobile Companion · Local browser preview · Signals are not guarantees of future performance.</div>
+</main>
+<script>
+(function(){
+const demo={
+  "schema":"v11-mobile-snapshot-v1",
+  "generated_at":new Date().toISOString(),
+  "source":"DEMO ONLY",
+  "connected":false,
+  "account":{"currency":"USD","equity":0,"open_v11_positions":0},
+  "symbols":[
+    {"symbol":"EURUSD","timeframe":"H1 / H4","side":"BUY","confidence":0.78,"sniper_score":82,"status":"DEMO SIGNAL","price":1.0842,"spread_points":12,"reason":"Illustrative only: H4 trend alignment and hypothetical sniper confirmation.","updated_at":new Date().toISOString()},
+    {"symbol":"GBPUSD","timeframe":"H1 / H4","side":"FLAT","confidence":0.42,"sniper_score":0,"status":"NO ENTRY","price":1.2711,"spread_points":17,"reason":"Illustrative only: consensus threshold not met.","updated_at":new Date().toISOString()},
+    {"symbol":"XAUUSD","timeframe":"H1 / H4","side":"SELL","confidence":0.74,"sniper_score":77,"status":"DEMO SIGNAL","price":2328.5,"spread_points":22,"reason":"Illustrative only: bearish structure and hypothetical entry filter passed.","updated_at":new Date().toISOString()}
+  ],
+  "events":[
+    {"time":new Date().toISOString(),"level":"info","title":"Demo preview loaded","message":"No broker or MT5 data is connected."},
+    {"time":new Date().toISOString(),"level":"warn","title":"Manual verification required","message":"Check the live MT5 Experts and Journal tabs before acting on any signal."}
+  ]
+};
+let current=demo, selected=demo.symbols[0]?.symbol||null, isDemo=true;
+const $=id=>document.getElementById(id);
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function num(v,d=0){const n=Number(v);return Number.isFinite(n)?n:d}
+function fmtTime(v){if(!v)return"—";const d=new Date(v);return Number.isNaN(d.getTime())?esc(v):d.toLocaleString([], {month:"short",day:"2-digit",hour:"2-digit",minute:"2-digit"});}
+function validate(data){
+ if(!data||typeof data!=="object"||!Array.isArray(data.symbols))throw new Error("JSON must contain a symbols array.");
+ const symbols=data.symbols.slice(0,250).map(x=>{
+   if(!x||typeof x.symbol!=="string"||!x.symbol.trim())throw new Error("Every symbol row must include a symbol name.");
+   const side=String(x.side||"FLAT").toUpperCase();
+   if(!["BUY","SELL","FLAT"].includes(side))throw new Error("Signal side must be BUY, SELL or FLAT.");
+   return {...x,symbol:x.symbol.trim(),side,confidence:Math.max(0,Math.min(1,num(x.confidence))),sniper_score:Math.max(0,Math.min(100,num(x.sniper_score))),price:num(x.price),spread_points:num(x.spread_points)};
+ });
+ return {...data,symbols,events:Array.isArray(data.events)?data.events.slice(0,100):[],account:data.account&&typeof data.account==="object"?data.account:{}};
+}
+function render(){
+ const symbols=current.symbols||[], events=current.events||[];
+ $("watchCount").textContent=symbols.length;
+ $("signalCount").textContent=symbols.filter(s=>s.side!=="FLAT").length;
+ $("positionCount").textContent=Number.isFinite(Number(current.account?.open_v11_positions))?current.account.open_v11_positions:"—";
+ $("lastScan").textContent=fmtTime(current.generated_at);
+ $("ageLabel").textContent=isDemo?"Demo preview · not live":(current.connected?"Snapshot says connected":"Imported snapshot · not live connection");
+ $("connection").textContent=isDemo?"DEMO DATA · NOT CONNECTED":(current.connected?"SNAPSHOT MARKED CONNECTED":"IMPORTED SNAPSHOT · OFFLINE");
+ $("connection").className="status"+(current.connected&&!isDemo?" live":"");
+ $("dataTag").textContent=isDemo?"DEMO":"IMPORTED";
+ $("connectionInfo").textContent=current.connected&&!isDemo?"The imported file says connected, but this dashboard does not maintain a persistent broker connection. Verify snapshot timestamp and source independently.":"No persistent MT5 connection is configured. This version displays only the JSON snapshot selected by you; it cannot read your PC or broker automatically.";
+ $("symbols").innerHTML=symbols.length?symbols.map(s=>`<button type="button" class="symbol" data-symbol="${esc(s.symbol)}" style="text-align:left;width:100%;color:inherit"><div><div class="symname">${esc(s.symbol)} <span class="side ${s.side.toLowerCase()}">${esc(s.side)}</span></div><div class="subline">${esc(s.timeframe||"H1")} · ${esc(s.status||"Snapshot")}</div><div class="bar"><span style="width:${Math.round(s.confidence*100)}%"></span></div></div><div class="score">${Math.round(s.confidence*100)}<small>confidence %*</small></div></button>`).join(""):'<div class="empty">No symbols found in this snapshot.</div>';
+ $("events").innerHTML=events.length?events.map(e=>`<div class="event"><span class="dot ${e.level==="error"?"red":e.level==="success"?"green":""}"></span><div><strong>${esc(e.title||e.level||"Event")}</strong><p>${esc(e.message||"")}</p><p>${fmtTime(e.time)}</p></div></div>`).join(""):'<div class="empty">No events in this snapshot.</div>';
+ document.querySelectorAll("[data-symbol]").forEach(b=>b.addEventListener("click",()=>{selected=b.dataset.symbol;renderDetail();}));
+ renderDetail();
+}
+function renderDetail(){
+ const s=(current.symbols||[]).find(x=>x.symbol===selected);
+ if(!s){$("detail").innerHTML='<div class="empty">Select a symbol to see details.</div>';return;}
+ $("selectedSide").textContent=s.side;$("selectedSide").className="side "+s.side.toLowerCase();
+ $("detail").innerHTML=`<div class="symname" style="font-size:18px;margin-bottom:6px">${esc(s.symbol)}</div><div class="subline">${esc(s.status||"Imported snapshot")} · ${esc(s.timeframe||"")}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0"><div><div class="muted">Confidence*</div><strong>${Math.round(s.confidence*100)}%</strong></div><div><div class="muted">Sniper score</div><strong>${num(s.sniper_score).toFixed(1)}</strong></div><div><div class="muted">Price</div><strong>${s.price?esc(s.price):"—"}</strong></div><div><div class="muted">Spread (points)</div><strong>${esc(s.spread_points??"—")}</strong></div></div><div class="fineprint"><strong>Rationale</strong><br>${esc(s.reason||s.rationale||"No rationale provided.")}</div><div class="fineprint" style="margin-top:10px">Updated: ${fmtTime(s.updated_at||current.generated_at)}</div><p class="fineprint">*Confidence is a model score, not the probability of profit.</p>`;
+}
+$("fileInput").addEventListener("change",async e=>{
+ const f=e.target.files?.[0];if(!f)return;
+ try{const parsed=JSON.parse(await f.text());current=validate(parsed);isDemo=false;selected=current.symbols[0]?.symbol||null;$("importError").textContent="Imported "+f.name+" successfully. Check the timestamp and source before relying on it.";render();}
+ catch(err){$("importError").textContent="Could not import file: "+err.message;}
+ e.target.value="";
+});
+$("demoBtn").addEventListener("click",()=>{current=demo;isDemo=true;selected=current.symbols[0]?.symbol||null;$("importError").textContent="Demo data loaded. These rows are fictional examples, not live signals.";render();});
+$("exportBtn").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(current,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="v11-mobile-snapshot.json";a.click();URL.revokeObjectURL(url);});
+render();
+if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){navigator.serviceWorker.register("./sw.js").catch(()=>{});}
+})();
+</script>
+</body>
+</html>
