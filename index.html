@@ -2,126 +2,150 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101827">
-<meta name="description" content="Android-friendly companion dashboard for V11 MT5 swing signals and alerts.">
-<link rel="manifest" href="manifest.webmanifest">
-<title>V11 Mobile Companion</title>
+<meta name="description" content="Free manual swing-trading research for Deriv synthetic indices, forex and gold.">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>V11 Inspired Swing Research</title>
 <style>
-:root{color-scheme:dark;--bg:#0b1220;--panel:#121c2d;--panel2:#172338;--line:#26364e;--text:#edf3fb;--muted:#a4b3c8;--green:#5ee0a0;--red:#ff7d88;--amber:#ffd27a;--blue:#8bb8ff}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#101827 0,#0b1220 360px);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-main{max-width:940px;margin:0 auto;padding:16px 14px 36px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:8px 0 18px}.brand{display:flex;gap:11px;align-items:center}.logo{width:42px;height:42px;border-radius:13px;background:#20395c;display:grid;place-items:center;font-weight:900;color:#b9d5ff;border:1px solid #36547b}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}h1{font-size:21px;margin:2px 0 0}.status{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:7px 10px;color:var(--amber);background:#241f16}.status.live{color:var(--green);background:#10271f}.notice{padding:12px 14px;border:1px solid #6e5526;background:#251f14;border-radius:14px;color:#ffe5b0;font-size:13px;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}.metric,.panel{background:rgba(18,28,45,.95);border:1px solid var(--line);border-radius:16px}.metric{padding:13px}.metric .label{font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:25px;letter-spacing:-.03em;margin-top:5px}.metric small{font-size:11px;color:var(--muted)}.layout{display:grid;grid-template-columns:1.25fr .75fr;gap:12px}.panel{padding:14px;margin-bottom:12px;min-width:0}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.panel h2{font-size:16px;margin:0}.muted{color:var(--muted);font-size:12px}.controls{display:flex;gap:8px;flex-wrap:wrap}.btn,button,.filelabel{min-height:42px;border-radius:11px;border:1px solid #344965;background:#1a2a42;color:var(--text);font:inherit;font-size:13px;padding:9px 12px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn.primary{background:#c6dcff;color:#10203a;border-color:#c6dcff;font-weight:700}.btn:focus-visible,button:focus-visible,.filelabel:focus-within{outline:3px solid var(--blue);outline-offset:2px}.filelabel input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.symbols{display:grid;gap:8px}.symbol{border:1px solid var(--line);background:#101a2a;border-radius:13px;padding:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}.symname{font-weight:750}.subline{font-size:12px;color:var(--muted);margin-top:2px}.side{font-size:11px;border-radius:99px;padding:4px 8px;border:1px solid var(--line);font-weight:800;display:inline-block}.buy{color:var(--green);background:#10271f;border-color:#235c43}.sell{color:var(--red);background:#30171f;border-color:#71323d}.flat{color:var(--muted);background:#1a2535}.score{text-align:right;font-size:20px;font-weight:800}.score small{display:block;font-size:10px;color:var(--muted);font-weight:500}.bar{height:5px;background:#243249;border-radius:99px;overflow:hidden;margin-top:8px}.bar span{display:block;height:100%;background:#8bb8ff;border-radius:99px}.eventlist{display:grid;gap:9px}.event{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.event:last-child{border:0}.dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex:none;background:var(--amber)}.dot.green{background:var(--green)}.dot.red{background:var(--red)}.event strong{display:block;font-size:13px}.event p{margin:2px 0 0;color:var(--muted);font-size:12px}.empty{border:1px dashed #3a4b64;border-radius:12px;padding:18px;text-align:center;color:var(--muted);font-size:13px}.footer{font-size:11px;color:var(--muted);text-align:center;padding:12px}.hidden{display:none!important}.tag{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 6px}.fineprint{font-size:12px;color:var(--muted);line-height:1.5}.error{color:var(--red);font-size:12px;margin-top:8px}
-@media(max-width:700px){main{padding:12px 11px 28px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.metric{padding:12px}.metric strong{font-size:23px}.layout{grid-template-columns:1fr}.panel{padding:12px}.top{align-items:flex-start}.symbol{padding:11px}.controls .btn,.controls .filelabel{flex:1}}
+:root{color-scheme:dark;--bg:#0b1220;--panel:#121c2d;--panel2:#172338;--line:#293b55;--text:#eef4ff;--muted:#a6b5cb;--green:#62e4a5;--red:#ff8290;--amber:#ffd27c;--blue:#91bdff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(#101827,#0b1220 420px);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}main{max-width:980px;margin:auto;padding:15px 12px 34px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:7px 0 18px}.brand{display:flex;gap:10px;align-items:center}.logo{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:#203a5e;color:#c4dcff;font-weight:900;border:1px solid #36547a}.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}h1{font-size:21px;margin:1px 0}.pill,.tag{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:6px 9px;color:var(--amber);background:#251f15}.panel,.metric{background:rgba(18,28,45,.96);border:1px solid var(--line);border-radius:15px}.panel{padding:13px;margin:0 0 12px}.notice{background:#241e14;border:1px solid #705727;border-radius:13px;padding:12px;color:#ffe4ae;font-size:13px;margin-bottom:12px}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}.metric{padding:12px}.muted{color:var(--muted);font-size:12px}.metric strong{display:block;font-size:23px;margin-top:4px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.btn,button,select{font:inherit;color:var(--text);background:#1a2a42;border:1px solid #344a68;border-radius:10px;padding:10px 12px;min-height:42px;cursor:pointer}.btn.primary{background:#c9ddff;color:#10203a;font-weight:750}.btn:disabled{opacity:.55;cursor:wait}.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:11px}.panel h2{font-size:16px;margin:0}.symbols{display:grid;gap:8px}.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border:1px solid var(--line);background:#0f1928;border-radius:12px;padding:11px}.sym{font-weight:800}.side{display:inline-block;border-radius:99px;padding:3px 7px;font-size:10px;font-weight:800;border:1px solid var(--line)}.BUY{color:var(--green);background:#10271f;border-color:#245a43}.SELL{color:var(--red);background:#2b171e;border-color:#6d303b}.WAIT,.FLAT{color:var(--amber);background:#251f15}.score{text-align:right;font-size:19px;font-weight:800}.score small{display:block;color:var(--muted);font-size:10px;font-weight:500}.bar{height:5px;border-radius:9px;background:#243249;overflow:hidden;margin-top:7px}.bar span{display:block;height:100%;background:var(--blue)}.events{display:grid;gap:8px}.event{padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}.event:last-child{border:0}.event strong{display:block}.event span{color:var(--muted)}.empty{border:1px dashed #42546e;padding:16px;border-radius:12px;color:var(--muted);font-size:13px;text-align:center}.fine{font-size:12px;color:var(--muted)}.small-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.field{display:grid;gap:5px}.field label{font-size:12px;color:var(--muted)}select{width:100%}.error{font-size:12px;color:var(--red);white-space:pre-wrap}.success{font-size:12px;color:var(--green)}.footer{text-align:center;color:var(--muted);font-size:11px;padding:10px}.hidden{display:none}
+@media(max-width:680px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.top{align-items:flex-start}.controls .btn{flex:1}.panel{padding:11px}.metric strong{font-size:21px}}
 </style>
 </head>
-<body>
-<main id="app">
-  <header class="top">
-    <div class="brand"><div class="logo">V11</div><div><div class="eyebrow">MT5 swing edition</div><h1>Mobile Companion</h1></div></div>
-    <div id="connection" class="status">DEMO DATA · NOT CONNECTED</div>
-  </header>
-  <div class="notice"><strong>Important:</strong> This dashboard is a companion UI, not a trading terminal. The sample rows are illustrative demo data. Nothing here confirms live MT5 signals or places orders. Import an actual V11 JSON export when the EA bridge is configured.</div>
-  <section class="grid" aria-label="Account summary">
-    <div class="metric"><div class="label">Watchlist symbols</div><strong id="watchCount">—</strong><small>from imported snapshot</small></div>
-    <div class="metric"><div class="label">Qualified signals</div><strong id="signalCount">—</strong><small>BUY or SELL only</small></div>
-    <div class="metric"><div class="label">Open V11 positions</div><strong id="positionCount">—</strong><small>snapshot value</small></div>
-    <div class="metric"><div class="label">Last scan</div><strong id="lastScan" style="font-size:16px">—</strong><small id="ageLabel">No live connection</small></div>
-  </section>
-  <div class="controls" style="margin-bottom:12px">
-    <label class="filelabel">⬆ Import V11 JSON <input id="fileInput" type="file" accept=".json,application/json"></label>
-    <button class="btn" id="demoBtn" type="button">Load demo preview</button>
-    <button class="btn" id="exportBtn" type="button">Export current view</button>
-  </div>
-  <div id="importError" class="error" role="status" aria-live="polite"></div>
-  <div class="layout">
-    <section class="panel">
-      <div class="panelhead"><div><h2>Watchlist & signals</h2><div class="muted">Tap a row to inspect its rationale</div></div><span id="dataTag" class="tag">DEMO</span></div>
-      <div id="symbols" class="symbols"></div>
-    </section>
-    <div>
-      <section class="panel">
-        <div class="panelhead"><h2>Recent events</h2><span class="tag">LOCAL VIEW</span></div>
-        <div id="events" class="eventlist"></div>
-      </section>
-      <section class="panel">
-        <div class="panelhead"><h2>Selected symbol</h2><span id="selectedSide" class="side flat">FLAT</span></div>
-        <div id="detail"><div class="empty">Select a symbol to see details.</div></div>
-      </section>
-      <section class="panel">
-        <h2 style="margin-bottom:8px">Connection status</h2>
-        <p class="fineprint" id="connectionInfo">No MT5 connection configured. This version reads a JSON snapshot chosen by you. It does not fetch data from your PC or broker automatically.</p>
-        <p class="fineprint">Never upload account passwords, investor passwords, API keys, seed phrases or private keys. This dashboard should receive only market/signal summary data.</p>
-      </section>
-    </div>
-  </div>
-  <div class="footer">V11 Mobile Companion · Local browser preview · Signals are not guarantees of future performance.</div>
+<body><main>
+<header class="top"><div class="brand"><div class="logo">V11</div><div><div class="eyebrow">V11 logic port · research only</div><h1>V11 Manual Swing Signals</h1></div></div><div id="status" class="pill">NOT CONNECTED</div></header>
+<div class="notice"><strong>Read-only research tool.</strong> Deriv quotes and candles may be retrieved directly from its public market-data WebSocket. Forex/gold symbols are searched from the same public symbol list and may not all be available. This app does not connect to your V11 EA, place trades, or guarantee profitability. The signal engine ports the source’s normalized indicator formulas, Regime → Volatility → Trend/Momentum consensus, experience gate and strategy discovery. It runs in the browser on public candles; it is not the MT5 EA process itself, and terminal-only learned Global Variables are not imported.</div>
+<section class="metrics">
+<div class="metric"><div class="muted">Markets scanned</div><strong id="mcount">0</strong><div class="muted">available in this session</div></div>
+<div class="metric"><div class="muted">BUY candidates</div><strong id="buycount">0</strong><div class="muted">heuristic only</div></div>
+<div class="metric"><div class="muted">SELL candidates</div><strong id="sellcount">0</strong><div class="muted">heuristic only</div></div>
+<div class="metric"><div class="muted">Last update</div><strong id="last" style="font-size:15px">—</strong><div id="fresh" class="muted">No data yet</div></div>
+</section>
+<section class="panel">
+<div class="panel-head"><h2>Data controls</h2><span class="tag">NO LOGIN</span></div>
+<div class="small-grid">
+<div class="field"><label for="market">Market group</label><select id="market"><option value="deriv">Deriv synthetic indices</option><option value="forex">Forex & gold</option></select></div>
+<div class="field"><label for="tf">Analysis timeframe</label><select id="tf"><option value="900">15 minutes</option><option value="3600" selected>1 hour</option><option value="14400">4 hours</option><option value="86400">Daily</option></select></div>
+</div>
+<div class="controls" style="margin-top:10px"><button id="connect" class="btn primary">Connect / refresh data</button><button id="stop" class="btn">Stop stream</button><button id="demo" class="btn">Load example only</button><button id="record" class="btn">Record selected outcome</button></div>
+<div id="message" class="fine" role="status" aria-live="polite">Choose a market group and tap Connect. Public market data only; no account token is requested.</div>
+</section>
+<div class="layout">
+<section class="panel"><div class="panel-head"><h2>Live markets & V11-derived signals</h2><span id="counttag" class="tag">0 symbols</span></div><div id="symbols" class="symbols"><div class="empty">Connect to load market data.</div></div></section>
+<div>
+<section class="panel"><div class="panel-head"><h2>Selected market</h2><span id="side" class="side WAIT">WAIT</span></div><div id="detail" class="empty">Select a market row for the current analysis.</div></section>
+<section class="panel"><div class="panel-head"><h2>Research notes</h2></div><div id="events" class="events"><div class="event"><strong>Waiting for data</strong><span>Connect to Deriv to load current ticks and candles.</span></div></div><p class="fine">Ported V11 decision engine: Regime → Volatility → Trend/Momentum agents → weighted consensus → experience memory qualification → strategy discovery. Confidence is an internal score, not probability of profit. MT5 terminal learning variables are not imported.</p></section>
+<section class="panel"><h2 style="margin:0 0 8px">Forex / gold markets</h2><p class="fine">This starter does not hardcode an unauthenticated FX provider because free endpoints can change, impose quotas or require keys. It shows the connection status honestly. You can still use imported candle JSON for forex/gold, or we can add a chosen source in a later revision.</p><p class="fine">For any source, check timestamp, symbol mapping and broker price differences before acting.</p></section>
+</div></div>
+<div class="footer">Free client-side prototype · Data connection depends on network/API availability · Manual decisions only.</div>
 </main>
 <script>
-(function(){
-const demo={
-  "schema":"v11-mobile-snapshot-v1",
-  "generated_at":new Date().toISOString(),
-  "source":"DEMO ONLY",
-  "connected":false,
-  "account":{"currency":"USD","equity":0,"open_v11_positions":0},
-  "symbols":[
-    {"symbol":"EURUSD","timeframe":"H1 / H4","side":"BUY","confidence":0.78,"sniper_score":82,"status":"DEMO SIGNAL","price":1.0842,"spread_points":12,"reason":"Illustrative only: H4 trend alignment and hypothetical sniper confirmation.","updated_at":new Date().toISOString()},
-    {"symbol":"GBPUSD","timeframe":"H1 / H4","side":"FLAT","confidence":0.42,"sniper_score":0,"status":"NO ENTRY","price":1.2711,"spread_points":17,"reason":"Illustrative only: consensus threshold not met.","updated_at":new Date().toISOString()},
-    {"symbol":"XAUUSD","timeframe":"H1 / H4","side":"SELL","confidence":0.74,"sniper_score":77,"status":"DEMO SIGNAL","price":2328.5,"spread_points":22,"reason":"Illustrative only: bearish structure and hypothetical entry filter passed.","updated_at":new Date().toISOString()}
-  ],
-  "events":[
-    {"time":new Date().toISOString(),"level":"info","title":"Demo preview loaded","message":"No broker or MT5 data is connected."},
-    {"time":new Date().toISOString(),"level":"warn","title":"Manual verification required","message":"Check the live MT5 Experts and Journal tabs before acting on any signal."}
-  ]
-};
-let current=demo, selected=demo.symbols[0]?.symbol||null, isDemo=true;
+(()=> {
 const $=id=>document.getElementById(id);
-function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function num(v,d=0){const n=Number(v);return Number.isFinite(n)?n:d}
-function fmtTime(v){if(!v)return"—";const d=new Date(v);return Number.isNaN(d.getTime())?esc(v):d.toLocaleString([], {month:"short",day:"2-digit",hour:"2-digit",minute:"2-digit"});}
-function validate(data){
- if(!data||typeof data!=="object"||!Array.isArray(data.symbols))throw new Error("JSON must contain a symbols array.");
- const symbols=data.symbols.slice(0,250).map(x=>{
-   if(!x||typeof x.symbol!=="string"||!x.symbol.trim())throw new Error("Every symbol row must include a symbol name.");
-   const side=String(x.side||"FLAT").toUpperCase();
-   if(!["BUY","SELL","FLAT"].includes(side))throw new Error("Signal side must be BUY, SELL or FLAT.");
-   return {...x,symbol:x.symbol.trim(),side,confidence:Math.max(0,Math.min(1,num(x.confidence))),sniper_score:Math.max(0,Math.min(100,num(x.sniper_score))),price:num(x.price),spread_points:num(x.spread_points)};
- });
- return {...data,symbols,events:Array.isArray(data.events)?data.events.slice(0,100):[],account:data.account&&typeof data.account==="object"?data.account:{}};
+let ws=null, timer=null, markets=[], selected=null, demoMode=false, lastUpdated=null;
+const derivSymbols=[
+ {symbol:"R_10",label:"Volatility 10 Index"},{symbol:"R_25",label:"Volatility 25 Index"},{symbol:"R_50",label:"Volatility 50 Index"},{symbol:"R_75",label:"Volatility 75 Index"},{symbol:"R_100",label:"Volatility 100 Index"},{symbol:"1HZ10V",label:"Volatility 10 (1s)"},{symbol:"1HZ25V",label:"Volatility 25 (1s)"},{symbol:"1HZ50V",label:"Volatility 50 (1s)"},{symbol:"1HZ75V",label:"Volatility 75 (1s)"},{symbol:"1HZ100V",label:"Volatility 100 (1s)"}
+];
+function setMsg(t,cls="fine"){ $("message").className=cls; $("message").textContent=t;}
+function stamp(t){return new Date(t||Date.now()).toLocaleString([], {month:"short",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"});}
+function ema(vals,period){if(!vals.length)return 0;const k=2/(period+1);let e=vals[0];for(let i=1;i<vals.length;i++)e=vals[i]*k+e*(1-k);return e;}
+function clamp(x,a,b){return Math.max(a,Math.min(b,x));}
+function rsi(vals,n=14){if(vals.length<n+1)return 50;let gain=0,loss=0;for(let i=vals.length-n;i<vals.length;i++){const d=vals[i]-vals[i-1];if(d>0)gain+=d;else loss-=d;}if(loss===0)return 100;return 100-100/(1+gain/loss);}
+function calcADX(candles,n=14){if(candles.length<n*2+2)return 0;let tr=[],pdm=[],mdm=[];for(let i=1;i<candles.length;i++){const a=candles[i-1],b=candles[i];const up=Number(b.high)-Number(a.high),down=Number(a.low)-Number(b.low);tr.push(Math.max(Number(b.high)-Number(b.low),Math.abs(Number(b.high)-Number(a.close)),Math.abs(Number(b.low)-Number(a.close))));pdm.push(up>down&&up>0?up:0);mdm.push(down>up&&down>0?down:0);}let dx=[];for(let i=n;i<tr.length;i++){const sumTR=tr.slice(i-n+1,i+1).reduce((a,b)=>a+b,0);if(!sumTR)continue;const plus=100*pdm.slice(i-n+1,i+1).reduce((a,b)=>a+b,0)/sumTR;const minus=100*mdm.slice(i-n+1,i+1).reduce((a,b)=>a+b,0)/sumTR;dx.push(plus+minus?100*Math.abs(plus-minus)/(plus+minus):0);}return dx.length?dx.slice(-n).reduce((a,b)=>a+b,0)/Math.min(n,dx.length):0;}
+function memoryStore(){try{return JSON.parse(localStorage.getItem('v11_manual_learning_v1')||'{}')}catch(e){return {}}}
+function memorySave(x){try{localStorage.setItem('v11_manual_learning_v1',JSON.stringify(x))}catch(e){}}
+function bucket(t,m,v,r){const sg=x=>x>.2?1:x<-.2?2:0;return sg(t)+3*sg(m)+9*(v>=.5?1:0)+18*(r>=.5?1:0)}
+function analyze(m){
+ const cs=(m.candles||[]).filter(x=>Number.isFinite(Number(x.close)));if(cs.length<65){m.side='WAIT';m.confidence=0;m.reason='Waiting for at least 65 candles, as required for stable EMA50/ADX context.';return m;}
+ const closes=cs.map(x=>Number(x.close)),last=closes[closes.length-1];
+ const tr=[];for(let i=1;i<cs.length;i++){const c=cs[i],p=cs[i-1];tr.push(Math.max(Number(c.high)-Number(c.low),Math.abs(Number(c.high)-Number(p.close)),Math.abs(Number(c.low)-Number(p.close))));}
+ const atr=tr.slice(-14).reduce((a,b)=>a+b,0)/14, eFast=ema(closes.slice(-100),20),eSlow=ema(closes.slice(-120),50),rv=rsi(closes,14),adx=calcADX(cs,14);
+ if(!(atr>0&&Number.isFinite(adx))){m.side='WAIT';m.confidence=0;m.reason='Invalid ATR/ADX calculation; no signal.';return m;}
+ // Port of V11 MT5MarketData normalized feature formulas.
+ const trend=clamp((eFast-eSlow)/(2*atr),-1,1),momentum=clamp((rv-50)/50,-1,1),vol=clamp((atr/Math.max(Math.abs(last),1e-12))/.05,0,1),regime=clamp(adx/50,0,1);
+ const votes={trend:trend>.25?1:trend<-.25?-1:0,momentum:momentum>.25?1:momentum<-.25?-1:0};
+ let side='WAIT',confidence=0,reasons=[];
+ if(regime<.2){m.side='WAIT';m.confidence=0;m.reason=`V11 regime gate blocked: ADX ${adx.toFixed(1)} gives regime ${regime.toFixed(2)} (<0.20).`;m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};return m;}
+ if(vol>=.9){m.side='WAIT';m.confidence=0;m.reason=`V11 volatility gate blocked: volatility score ${vol.toFixed(2)} ≥ 0.90.`;m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};return m;}
+ if(vol>.85){m.side='WAIT';m.confidence=0;m.reason=`V11 volatility agent blocked: volatility score ${vol.toFixed(2)} > 0.85.`;m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};return m;}
+ const tc=Math.abs(trend),mc=Math.abs(momentum);
+ if(!votes.trend||!votes.momentum||votes.trend!==votes.momentum){m.side='WAIT';m.confidence=0;m.reason=`V11 consensus blocked: Trend ${votes.trend||'FLAT'} (${tc.toFixed(2)}) and Momentum ${votes.momentum||'FLAT'} (${mc.toFixed(2)}) must both be directional and agree.`;m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};return m;}
+ side=votes.trend===1?'BUY':'SELL';confidence=Math.min(1,(tc+mc)/2);if(confidence<.55){m.side='WAIT';m.confidence=Math.round(confidence*100);m.reason=`V11 consensus confidence ${confidence.toFixed(2)} is below 0.55.`;m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};return m;}
+ const data=memoryStore(),key=`${m.symbol}|${side}|${bucket(trend,momentum,vol,regime)}`,mem=data[key]||{n:0,avg:0,w:0};const mult=mem.n>=5?clamp(1+.20*mem.avg*Math.min(1,mem.n/20),.8,1.2):1;confidence=clamp(confidence*mult,0,1);let required=.55;if(mem.n>=5&&mem.avg<0)required+=Math.min(.15,Math.abs(mem.avg)*.15);if(mem.n>=5&&mem.avg>0)required-=Math.min(.05,mem.avg*.05);required=clamp(required,.5,.7);
+ if(confidence<required){m.side='WAIT';m.confidence=Math.round(confidence*100);m.reason=`V11 experience-memory gate blocked: adjusted ${confidence.toFixed(2)} below required ${required.toFixed(2)} (${mem.n} locally recorded outcomes).`;m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};return m;}
+ const td=trend*(side==='BUY'?1:-1),md=momentum*(side==='BUY'?1:-1);let strategy=-1,strategyName='',best=-1;
+ const eligible=[td>=.35,md>=.35&&vol>=.35,td>=.25&&md>=.25];const fits=[.55*td+.25*md+.20*regime,.25*td+.55*md+.20*vol,.4*td+.4*md+.2*regime];for(let i=0;i<3;i++){if(eligible[i]&&fits[i]>best){best=fits[i];strategy=i;}}
+ if(strategy<0){m.side='WAIT';m.confidence=Math.round(confidence*100);m.reason='V11 strategy-discovery gate: no eligible playbook for this context.';m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};return m;}
+ strategyName=['TREND_CONTINUATION','MOMENTUM_EXPANSION','BALANCED'][strategy];
+ const targetATR=strategy===0?Math.max(3,Math.abs(trend)>=.6&&Math.abs(momentum)>=.45?3:2):strategy===1?Math.max(2.5,Math.abs(trend)>=.6&&Math.abs(momentum)>=.45?3:2):Math.max(2.2,Math.abs(trend)>=.6&&Math.abs(momentum)>=.45?3:2);
+ m.side=side;m.confidence=Math.round(confidence*100);m.price=last;m.ema20=eFast;m.ema50=eSlow;m.rsi=rv;m.atr=atr;m.stopDistance=1.2*atr;m.targetDistance=targetATR*atr;m.strategy=strategyName;m.memorySamples=mem.n;m.updatedAt=Date.now();m.features={atr,ema20:eFast,ema50:eSlow,rsi:rv,adx,trend,momentum,volatility:vol,regime};m.reason=`V11 decision gates passed: Regime ${regime.toFixed(2)} → Volatility ${vol.toFixed(2)} → Trend ${trend.toFixed(2)} and Momentum ${momentum.toFixed(2)} agree → consensus ${confidence.toFixed(2)} → ${strategyName}. Stop reference 1.2 ATR; target reference ${targetATR.toFixed(1)} ATR (strategy template only).`;
+ return m;
 }
 function render(){
- const symbols=current.symbols||[], events=current.events||[];
- $("watchCount").textContent=symbols.length;
- $("signalCount").textContent=symbols.filter(s=>s.side!=="FLAT").length;
- $("positionCount").textContent=Number.isFinite(Number(current.account?.open_v11_positions))?current.account.open_v11_positions:"—";
- $("lastScan").textContent=fmtTime(current.generated_at);
- $("ageLabel").textContent=isDemo?"Demo preview · not live":(current.connected?"Snapshot says connected":"Imported snapshot · not live connection");
- $("connection").textContent=isDemo?"DEMO DATA · NOT CONNECTED":(current.connected?"SNAPSHOT MARKED CONNECTED":"IMPORTED SNAPSHOT · OFFLINE");
- $("connection").className="status"+(current.connected&&!isDemo?" live":"");
- $("dataTag").textContent=isDemo?"DEMO":"IMPORTED";
- $("connectionInfo").textContent=current.connected&&!isDemo?"The imported file says connected, but this dashboard does not maintain a persistent broker connection. Verify snapshot timestamp and source independently.":"No persistent MT5 connection is configured. This version displays only the JSON snapshot selected by you; it cannot read your PC or broker automatically.";
- $("symbols").innerHTML=symbols.length?symbols.map(s=>`<button type="button" class="symbol" data-symbol="${esc(s.symbol)}" style="text-align:left;width:100%;color:inherit"><div><div class="symname">${esc(s.symbol)} <span class="side ${s.side.toLowerCase()}">${esc(s.side)}</span></div><div class="subline">${esc(s.timeframe||"H1")} · ${esc(s.status||"Snapshot")}</div><div class="bar"><span style="width:${Math.round(s.confidence*100)}%"></span></div></div><div class="score">${Math.round(s.confidence*100)}<small>confidence %*</small></div></button>`).join(""):'<div class="empty">No symbols found in this snapshot.</div>';
- $("events").innerHTML=events.length?events.map(e=>`<div class="event"><span class="dot ${e.level==="error"?"red":e.level==="success"?"green":""}"></span><div><strong>${esc(e.title||e.level||"Event")}</strong><p>${esc(e.message||"")}</p><p>${fmtTime(e.time)}</p></div></div>`).join(""):'<div class="empty">No events in this snapshot.</div>';
- document.querySelectorAll("[data-symbol]").forEach(b=>b.addEventListener("click",()=>{selected=b.dataset.symbol;renderDetail();}));
- renderDetail();
+ const active=markets.filter(m=>m.price!==undefined);
+ $("mcount").textContent=active.length;$("buycount").textContent=active.filter(m=>m.side==="BUY").length;$("sellcount").textContent=active.filter(m=>m.side==="SELL").length;
+ $("last").textContent=lastUpdated?stamp(lastUpdated):"—";$("fresh").textContent=lastUpdated?"Last tick/candle received":"No data yet";$("counttag").textContent=active.length+" symbols";
+ $("symbols").innerHTML=active.length?active.map(m=>`<button class="row" type="button" data-sym="${m.symbol}" style="text-align:left;width:100%;color:inherit"><div><div class="sym">${m.label||m.symbol} <span class="side ${m.side||"WAIT"}">${m.side||"WAIT"}</span></div><div class="muted">${m.symbol} · ${m.timeframe||"selected TF"} · ${m.price}</div><div class="bar"><span style="width:${m.confidence||0}%"></span></div></div><div class="score">${m.confidence||0}<small>V11 logic confidence / 100</small></div></button>`).join(""):'<div class="empty">No data received yet. Check your internet connection or try again.</div>';
+ document.querySelectorAll("[data-sym]").forEach(b=>b.addEventListener("click",()=>{selected=b.dataset.sym;detail();}));
+ $("events").innerHTML=active.slice(0,5).map(m=>`<div class="event"><strong>${m.label||m.symbol}: ${m.side||"WAIT"}</strong><span>${stamp(m.updatedAt||lastUpdated)} · ${m.reason||"Waiting for enough candles."}</span></div>`).join("")||'<div class="event"><strong>No events</strong><span>Waiting for data.</span></div>';
+ detail();
 }
-function renderDetail(){
- const s=(current.symbols||[]).find(x=>x.symbol===selected);
- if(!s){$("detail").innerHTML='<div class="empty">Select a symbol to see details.</div>';return;}
- $("selectedSide").textContent=s.side;$("selectedSide").className="side "+s.side.toLowerCase();
- $("detail").innerHTML=`<div class="symname" style="font-size:18px;margin-bottom:6px">${esc(s.symbol)}</div><div class="subline">${esc(s.status||"Imported snapshot")} · ${esc(s.timeframe||"")}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0"><div><div class="muted">Confidence*</div><strong>${Math.round(s.confidence*100)}%</strong></div><div><div class="muted">Sniper score</div><strong>${num(s.sniper_score).toFixed(1)}</strong></div><div><div class="muted">Price</div><strong>${s.price?esc(s.price):"—"}</strong></div><div><div class="muted">Spread (points)</div><strong>${esc(s.spread_points??"—")}</strong></div></div><div class="fineprint"><strong>Rationale</strong><br>${esc(s.reason||s.rationale||"No rationale provided.")}</div><div class="fineprint" style="margin-top:10px">Updated: ${fmtTime(s.updated_at||current.generated_at)}</div><p class="fineprint">*Confidence is a model score, not the probability of profit.</p>`;
+function detail(){
+ const m=markets.find(x=>x.symbol===selected);
+ if(!m){$("detail").className="empty";$("detail").textContent="Select a market row for the current analysis.";return;}
+ $("side").textContent=m.side||"WAIT";$("side").className="side "+(m.side||"WAIT");
+ $("detail").className="";$("detail").innerHTML=`<div style="font-weight:800;font-size:17px">${m.label||m.symbol}</div><div class="muted">${m.symbol} · ${m.timeframe||""}</div><div class="small-grid" style="margin:12px 0"><div><div class="muted">Last price</div><strong>${m.price??"—"}</strong></div><div><div class="muted">Heuristic score</div><strong>${m.confidence??0}/100</strong></div><div><div class="muted">EMA 20</div><strong>${m.ema20?m.ema20.toFixed(5):"—"}</strong></div><div><div class="muted">EMA 50</div><strong>${m.ema50?m.ema50.toFixed(5):"—"}</strong></div><div><div class="muted">RSI</div><strong>${m.rsi?m.rsi.toFixed(1):"—"}</strong></div><div><div class="muted">ATR / ADX</div><strong>${m.atr?m.atr.toFixed(5):"—"} / ${m.features?.adx?m.features.adx.toFixed(1):"—"}</strong></div></div><p class="fine"><strong>Why:</strong> ${m.reason||"Not enough data."}</p><p class="fine"><strong>Updated:</strong> ${stamp(m.updatedAt||lastUpdated)}</p><p class="fine">This is a browser port of V11 source decision gates, not a running MT5 EA instance. MT5 terminal Global Variables and any agent memory stored only inside the terminal are not synced here. Confidence is not a probability of profit.</p>`;
 }
-$("fileInput").addEventListener("change",async e=>{
- const f=e.target.files?.[0];if(!f)return;
- try{const parsed=JSON.parse(await f.text());current=validate(parsed);isDemo=false;selected=current.symbols[0]?.symbol||null;$("importError").textContent="Imported "+f.name+" successfully. Check the timestamp and source before relying on it.";render();}
- catch(err){$("importError").textContent="Could not import file: "+err.message;}
- e.target.value="";
-});
-$("demoBtn").addEventListener("click",()=>{current=demo;isDemo=true;selected=current.symbols[0]?.symbol||null;$("importError").textContent="Demo data loaded. These rows are fictional examples, not live signals.";render();});
-$("exportBtn").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(current,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="v11-mobile-snapshot.json";a.click();URL.revokeObjectURL(url);});
-render();
-if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){navigator.serviceWorker.register("./sw.js").catch(()=>{});}
+function stop(){if(ws){try{ws.close()}catch(e){}ws=null;}if(timer){clearInterval(timer);timer=null;} $("status").textContent="DISCONNECTED";}
+function demo(){
+ stop();demoMode=true;const now=Date.now();markets=[
+ {symbol:"DEMO_EURUSD",label:"EUR/USD · DEMO ONLY",timeframe:"H1",price:1.0842,side:"WAIT",confidence:0,reason:"Fictional preview data; not live market data.",updatedAt:now},
+ {symbol:"DEMO_XAUUSD",label:"Gold · DEMO ONLY",timeframe:"H1",price:2328.5,side:"WAIT",confidence:0,reason:"Fictional preview data; not live market data.",updatedAt:now}
+ ];selected=markets[0].symbol;lastUpdated=now;$("status").textContent="DEMO ONLY";setMsg("Demo preview loaded. These prices are fictional and must not be used for trading.","error");render();
+}
+function connectDeriv(){
+ stop();demoMode=false;markets=[];selected=null;lastUpdated=null;
+ const tf=Number($("tf").value);const sec=tf;
+ $("status").textContent="CONNECTING…";setMsg("Connecting to Deriv public market-data stream. No account login or token is used.");
+ try{ws=new WebSocket("wss://ws.binaryws.com/websockets/v3");}catch(e){$("status").textContent="ERROR";setMsg("Could not create WebSocket: "+e.message,"error");return;}
+ const candleReqs=new Set();
+ ws.onopen=()=>{
+  $("status").textContent="CONNECTED · LOADING";
+  ws.send(JSON.stringify({active_symbols:"brief",product_type:"basic",req_id:1}));
+ };
+ ws.onmessage=ev=>{
+  let d;try{d=JSON.parse(ev.data)}catch(e){return;}
+  if(d.error){setMsg("Data source error: "+d.error.message,"error");return;}
+  if(d.msg_type==="active_symbols"){
+   const avail=d.active_symbols||[];
+   const chosen=$("market").value==="forex" ? avail.filter(a=>/^(frx.*|.*XAU.*|.*GOLD.*)$/i.test(a.symbol||"") && /forex|gold|metal/i.test((a.display_name||"")+" "+(a.market_display_name||"")+" "+(a.submarket_display_name||""))).slice(0,12).map(a=>({symbol:a.symbol,label:a.display_name||a.symbol})) : derivSymbols.filter(s=>avail.some(a=>a.symbol===s.symbol)).slice(0,10);
+   if(!chosen.length){setMsg("No matching symbols were returned for this market group. Deriv symbol availability varies; try another group or timeframe.","error");$("status").textContent="NO MATCHING SYMBOLS";return;}
+   chosen.forEach((s,i)=>{
+    const m={...s,timeframe:$("tf").selectedOptions[0].text,candles:[],side:"WAIT",confidence:0};
+    markets.push(m);
+    ws.send(JSON.stringify({ticks_history:s.symbol,count:120,end:"latest",style:"candles",granularity:sec,req_id:100+i}));
+    ws.send(JSON.stringify({ticks:s.symbol,subscribe:1,req_id:200+i}));
+   });
+   selected=markets[0]?.symbol;render();
+  }
+  if(d.msg_type==="candles"||d.msg_type==="history"){
+   const m=markets.find(x=>x.symbol===d.echo_req?.ticks_history);
+   if(m&&Array.isArray(d.candles)){m.candles=d.candles.map(c=>({open:Number(c.open),high:Number(c.high),low:Number(c.low),close:Number(c.close),epoch:Number(c.epoch)})).filter(c=>[c.open,c.high,c.low,c.close].every(Number.isFinite));analyze(m);lastUpdated=Date.now();render();}
+  }
+  if(d.msg_type==="tick"&&d.tick){
+   const m=markets.find(x=>x.symbol===d.tick.symbol);if(m){m.price=Number(d.tick.quote);m.tickTime=Number(d.tick.epoch)*1000;m.updatedAt=m.tickTime;lastUpdated=m.tickTime;if(m.candles?.length){const last=m.candles[m.candles.length-1];last.close=m.price;last.high=Math.max(last.high,m.price);last.low=Math.min(last.low,m.price);analyze(m);}render();}
+  }
+ };
+ ws.onerror=()=>{ $("status").textContent="CONNECTION ERROR";setMsg("Could not connect to the public market-data stream. Try again or check whether your network blocks WebSockets.","error");};
+ ws.onclose=()=>{if(!demoMode){$("status").textContent="DISCONNECTED";}};
+}
+$("connect").addEventListener("click",()=>{connectDeriv();});
+$("stop").addEventListener("click",()=>{stop();setMsg("Stream stopped by user.");});
+$("demo").addEventListener("click",demo);
+$("record").addEventListener("click",()=>{const m=markets.find(x=>x.symbol===selected);if(!m||!m.features||![BUY,SELL].includes(m.side)){setMsg("Select a BUY/SELL signal first; WAIT and demo rows cannot be recorded.","error");return;}const result=prompt("After you manually review the setup, record outcome reward from -1 (loss) to +1 (win). Use 0 for breakeven. This only updates local browser learning.","1");if(result===null)return;const reward=Number(result);if(!Number.isFinite(reward)||reward< -1||reward>1){setMsg("Enter a number from -1 to +1.","error");return;}const f=m.features,key=`${m.symbol}|${m.side}|${bucket(f.trend,f.momentum,f.volatility,f.regime)}`,d=memoryStore(),v=d[key]||{n:0,avg:0,w:0};v.n+=1;v.avg+=(reward-v.avg)/v.n;if(reward>0)v.w+=1;d[key]=v;memorySave(d);setMsg(`Saved outcome locally for ${m.symbol}. Samples for this context: ${v.n}. Reconnect to recalculate.`,"success");});
+$("market").addEventListener("change",()=>{if($("market").value==="forex")setMsg("Forex/gold: checking symbols from Deriv public active-symbols feed. Availability may be limited.");else setMsg("Deriv synthetic indices selected.");});
+window.addEventListener("beforeunload",stop);
 })();
 </script>
-</body>
-</html>
+</body></html>

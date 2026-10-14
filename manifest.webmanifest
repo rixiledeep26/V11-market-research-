@@ -1,10 +1,9 @@
 {
-  "name": "V11 Mobile Companion",
-  "short_name": "V11 Companion",
-  "description": "Android-friendly dashboard for imported V11 MT5 swing snapshots.",
+  "name": "V11 Inspired Swing Research",
+  "short_name": "V11 Research",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#0b1220",
   "theme_color": "#101827",
-  "icons": []
+  "description": "Free manual swing-trading research for Deriv indices, forex and gold."
 }
